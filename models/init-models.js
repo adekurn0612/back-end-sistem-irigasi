@@ -6,7 +6,9 @@ const sequelize = new Sequelize(
   process.env.DB_USER,
   process.env.DB_PASS,
   {
+    host: process.env.DB_HOST, // You can add the host here if needed
     dialect: 'mysql',
+    port: process.env.DB_PORT, // Include port in the options object
   }
 );
 
