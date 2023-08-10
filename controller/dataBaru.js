@@ -4,7 +4,7 @@ import { sequelize } from "../models/init-models.js";
 const dataBaruLahanSatu = async (req, res) => {
     try {
         const query =
-            `SELECT * FROM coba where nama = "Lora 0"
+            `SELECT * FROM irigasi where nama = "Lora 0"
             ORDER BY timestamp DESC 
             LIMIT 1;`;
 
@@ -19,7 +19,7 @@ const dataBaruLahanSatu = async (req, res) => {
 const dataBaruLahanDua = async (req, res) => {
     try {
         const query =
-            `SELECT * FROM coba where nama = "Lora 1"
+            `SELECT * FROM irigasi where nama = "Lora 1"
             ORDER BY timestamp DESC 
             LIMIT 1;`;
 
@@ -34,7 +34,7 @@ const dataBaruLahanDua = async (req, res) => {
 const dataBaruLahanTiga = async (req, res) => {
     try {
         const query =
-            `SELECT * FROM coba where nama = "Lora 2"
+            `SELECT * FROM irigasi where nama = "Lora 2"
             ORDER BY timestamp DESC 
             LIMIT 1;`;
 
@@ -49,7 +49,7 @@ const dataBaruLahanTiga = async (req, res) => {
 const dataBaruLahanEmpat = async (req, res) => {
     try {
         const query =
-            `SELECT * FROM coba where nama = "Lora 3"
+            `SELECT * FROM irigasi where nama = "Lora 3"
             ORDER BY timestamp DESC 
             LIMIT 1;`;
 

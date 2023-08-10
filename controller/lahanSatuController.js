@@ -7,8 +7,8 @@ const dataKalium = async (req, res) => {
     try {
         const query =
             `SELECT DATE(timestamp) AS date, AVG(sensor_k) AS avg_sensor_k_perHari
-            FROM coba
-            WHERE timestamp >= DATE_SUB((SELECT MAX(timestamp) FROM coba), INTERVAL 7 DAY) AND nama = 'Lora 0'
+            FROM irigasi
+            WHERE timestamp >= DATE_SUB((SELECT MAX(timestamp) FROM irigasi), INTERVAL 7 DAY) AND nama = 'Lora 0'
             GROUP BY DATE(timestamp) 
             ORDER BY date DESC;`;
 
@@ -28,7 +28,7 @@ const dataKalium = async (req, res) => {
 const dataKaliumTerbaru = async (req, res) => {
     try {
         const query =
-            `SELECT sensor_k FROM coba where nama = "Lora 0"
+            `SELECT sensor_k FROM irigasi where nama = "Lora 0"
             ORDER BY timestamp DESC 
             LIMIT 1;`;
 
@@ -48,8 +48,8 @@ const dataNitrogen = async (req , res)=>{
     try{
         const query = 
         `SELECT DATE(timestamp) AS date, AVG(sensor_n) AS avg_sensor_n_perHari
-        FROM coba
-        WHERE timestamp >= DATE_SUB((SELECT MAX(timestamp) FROM coba), INTERVAL 7 DAY) AND nama = 'Lora 0'
+        FROM irigasi
+        WHERE timestamp >= DATE_SUB((SELECT MAX(timestamp) FROM irigasi), INTERVAL 7 DAY) AND nama = 'Lora 0'
         GROUP BY DATE(timestamp) 
         ORDER BY date DESC;
         `;
@@ -69,7 +69,7 @@ const dataNitrogen = async (req , res)=>{
 const dataNitrogenTerbaru = async (req , res)=>{
     try{
         const query = 
-        `SELECT sensor_n FROM coba where nama = "Lora 0"
+        `SELECT sensor_n FROM irigasi where nama = "Lora 0"
         ORDER BY timestamp DESC 
         LIMIT 1;
         `;
@@ -86,8 +86,8 @@ const dataPH = async (req , res)=>{
     try{
     const query = 
         `SELECT DATE(timestamp) AS date, AVG(sensor_ph) AS avg_sensor_ph_perHari
-        FROM coba
-        WHERE timestamp >= DATE_SUB((SELECT MAX(timestamp) FROM coba), INTERVAL 7 DAY) AND nama = 'Lora 0'
+        FROM irigasi
+        WHERE timestamp >= DATE_SUB((SELECT MAX(timestamp) FROM irigasi), INTERVAL 7 DAY) AND nama = 'Lora 0'
         GROUP BY DATE(timestamp) 
         ORDER BY date DESC;
         `;
@@ -107,7 +107,7 @@ const dataPH = async (req , res)=>{
 const dataPHTerbaru = async (req , res)=>{
     try{
     const query = 
-        `SELECT sensor_ph FROM coba where nama = "Lora 0"
+        `SELECT sensor_ph FROM irigasi where nama = "Lora 0"
         ORDER BY timestamp DESC 
         LIMIT 1;
         `;
@@ -124,8 +124,8 @@ const dataPotasium = async (req, res)=>{
     try{
         const query = 
         `SELECT DATE(timestamp) AS date, AVG(sensor_p) AS avg_sensor_p_perHari
-        FROM coba
-        WHERE timestamp >= DATE_SUB((SELECT MAX(timestamp) FROM coba), INTERVAL 7 DAY) AND nama = 'Lora 0'
+        FROM irigasi
+        WHERE timestamp >= DATE_SUB((SELECT MAX(timestamp) FROM irigasi), INTERVAL 7 DAY) AND nama = 'Lora 0'
         GROUP BY DATE(timestamp) 
         ORDER BY date DESC;
         `;
@@ -146,7 +146,7 @@ const dataPotasium = async (req, res)=>{
 const dataPotasiumTerbaru = async (req, res)=>{
     try{
         const query = 
-        `SELECT sensor_p FROM coba where nama = "Lora 0"
+        `SELECT sensor_p FROM irigasi where nama = "Lora 0"
         ORDER BY timestamp DESC 
         LIMIT 1;
         `;
@@ -163,8 +163,8 @@ const dataKelembapan = async (req, res) => {
     try{
         const query = 
         `SELECT DATE(timestamp) AS date, AVG(sensor_kelembaban) AS avg_sensor_kelembaban_perHari
-        FROM coba
-        WHERE timestamp >= DATE_SUB((SELECT MAX(timestamp) FROM coba), INTERVAL 7 DAY) AND nama = 'Lora 0'
+        FROM irigasi
+        WHERE timestamp >= DATE_SUB((SELECT MAX(timestamp) FROM irigasi), INTERVAL 7 DAY) AND nama = 'Lora 0'
         GROUP BY DATE(timestamp) 
         ORDER BY date DESC;
         `;
@@ -184,7 +184,7 @@ const dataKelembapan = async (req, res) => {
 const dataKelembapanTerbaru = async (req, res) => {
     try{
         const query = 
-        `SELECT sensor_kelembaban FROM coba where nama = "Lora 0"
+        `SELECT sensor_kelembaban FROM irigasi where nama = "Lora 0"
         ORDER BY timestamp DESC 
         LIMIT 1;
         `;
