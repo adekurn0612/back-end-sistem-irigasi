@@ -41,7 +41,7 @@ export default class coba extends Model {
     }
   }, {
     sequelize,
-    tableName: 'irigasi',
+    tableName: 'coba',
     timestamps: false,
     indexes: [
       {
